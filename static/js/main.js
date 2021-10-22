@@ -71,8 +71,6 @@ tabs.forEach(tab => {
     })
 })
 
-
-
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper('.portfolio__container', {
     cssMode: true,
@@ -87,22 +85,6 @@ let swiperPortfolio = new Swiper('.portfolio__container', {
     },
 });
 
-/*==================== REVIEWS ====================*/
-let swiperReview = new Swiper('.review__container', {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-    pagination: {
-        el: '.swiper-pagination-review',
-        clickable: true,
-        dynamicBullets: true,
-    },
-    breakpoints: {
-        568: {
-            slidesPerView: 2,
-        },
-    }
-});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]');
@@ -174,4 +156,3 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
 })
-
