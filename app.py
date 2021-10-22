@@ -4,8 +4,6 @@ from forms.forms import ContactForm
 from flask_mail import Mail, Message
 import os
 
-# app = Flask(__name__)
-
 app= Flask(__name__, template_folder='')
 
 Compress(app)
