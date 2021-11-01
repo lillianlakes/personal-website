@@ -123,9 +123,13 @@ h1, h2, h3, h4 {
     font-weight: var(--font-semi-bold);
 }
 
-li {
-    list-style: none;
+ul {
+  list-style: none;
 }
+
+/* li {
+    list-style: none;
+} */
 
 a {
     text-decoration: none;
