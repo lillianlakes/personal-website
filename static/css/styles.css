@@ -956,6 +956,10 @@ img {
         justify-self: center;
     }
 
+    .about__img {
+      width: 350px;
+    }
+
     .about__row {
       display: flex;
     }
