@@ -18,8 +18,6 @@ mail_settings = {
     "MAIL_USE_SSL": False,
     "MAIL_USERNAME": 'lillianlakeswebsite@gmail.com',
     "MAIL_PASSWORD": 'lakeswebsitePW1',
-    # "MAIL_USERNAME": 'lillianlakes@gmail.com',
-    # "MAIL_PASSWORD": 'loghene87aItiskarmo',
 }
 
 # app.config["DEBUG"] = False # same as app.config["MAIL_DEBUG"]
