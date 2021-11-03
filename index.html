@@ -19,6 +19,9 @@
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="static/css/styles.css">
 
+    <!--==================== Favicon ====================-->
+    <link rel="shortcut icon" href="/static/img/favicon.jpeg">
+
     <title>Lillian Lakes</title>
 </head>
 
@@ -215,7 +218,7 @@
 
             <div class="skills__container container grid">
                 <!--==================== SKILLS 1 ====================-->
-                <!-- TODO: add logos for programming skills and remove lines -->
+                <!-- TODO: add logos for programming skills and remove lines (?) -->
                 <div class="skills__content skills__open">
                     <div class="skills__header">
                         <i class="uil uil-brackets-curly skills__icon"></i>
@@ -749,38 +752,32 @@
 
             <div class="contact__container container grid">
                 <div>
+
                     <div class="contact__information">
                         <i class="uil uil-phone contact__icon"></i>
-
                         <div>
                             <h3 class="contact__title">Call/Text</h3>
                             <span class="contact__subtitle">(404) 734-4044</span>
-
                         </div>
                     </div>
+
                     <div class="contact__information">
                         <i class="uil uil-envelope contact__icon"></i>
-
                         <div>
                             <h3 class="contact__title">Email</h3>
                             <span class="contact__subtitle">lillian.lakes@gmail.com</span>
-
                         </div>
                     </div>
+
                     <div class="contact__information">
                         <i class="uil uil-map-marker contact__icon"></i>
-
                         <div>
                             <h3 class="contact__title">Location</h3>
                             <span class="contact__subtitle">United States</span>
-
                         </div>
                     </div>
                 </div>
 
-
-
-                <!-- <form action="" class="contact__form grid"> -->
                 <form id="contact-form" method="POST" action="/" class="contact__form grid">
 
                     {% for message in form.email.errors %}

@@ -300,7 +300,7 @@ img {
 
 .home__blob {
     width: 200px;
-    fill: rgb(243, 252, 248);
+    fill: var(--text-color-lightest);
 }
 
 .home__blob-img {
@@ -591,8 +591,6 @@ img {
     color: var(--first-color);
 }
 
-
-
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
     overflow: initial;
@@ -793,8 +791,6 @@ img {
     width: 95%;
 }
 
-
-
 /*==================== FOOTER ====================*/
 .footer {
     padding-top: 2rem;
@@ -840,7 +836,7 @@ img {
 .footer__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: rgb(87, 128, 87);
+    color:  var(--first-color-lightest);
     margin-top: var(--mb-3);
 }
 
@@ -896,7 +892,7 @@ img {
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
-@media screen and (max-width: 350px) {
+@media screen and (min-width: 350px) {
     .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -918,28 +914,30 @@ img {
         width: 180px;
     }
 
+    .home__img {
+      order: 1;
+      justify-self: center;
+    }
+
+    .about__img {
+      width: 200px;
+    }
+
+    .about__row {
+      display: block;
+    }
+    
+    .about__column {
+      flex: 1;
+      text-align: center;
+    }
+
     .skills__title {
         font-size: var(--normal-font-size);
     }
 
     .history__data {
         gap: 0.5rem;
-    }
-
-    .review__data,
-    .review__header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .review__img {
-        margin-right: 0;
-        margin-bottom: var(--mb-0-25);
-    }
-
-    .review__data,
-    .review__description {
-        text-align: center;
     }
 } 
 
@@ -958,7 +956,14 @@ img {
         justify-self: center;
     }
 
-    /* .about__container, */
+    .about__row {
+      display: flex;
+    }
+    
+    .about__column {
+      flex: 50%;
+    }
+
     .skills__container,
     .portfolio__content,
     .contact__container,
@@ -993,7 +998,6 @@ img {
         font-weight: var(--font-medium);
         margin-bottom: var(--mb-1);
       }
-    }
 
     .header {
         top: 0;
@@ -1050,22 +1054,6 @@ img {
     .home__scroll-button {
         margin-left: 3rem;
     }
-
-    /* .about__container {
-        column-gap: 5rem;
-    } */
-
-    /* .about__description {
-        text-align: initial;
-    }
-
-    .about__info {
-        justify-content: space-between;
-    } */
-
-    /* .about__buttons {
-        justify-content: initial;
-    } */
 
     .history__tabs {
         justify-content: center;
@@ -1172,5 +1160,13 @@ img {
 
     .footer__subtitle {
         font-size: var(--smaller-font-size);
+    }
+
+    .about__row {
+      display: flex;
+    }
+    
+    .about__column {
+      flex: 50%;
     }
 }
