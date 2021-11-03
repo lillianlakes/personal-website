@@ -2,14 +2,15 @@ from flask import Flask, render_template, request, flash
 from flask_compress import Compress
 from forms.forms import ContactForm
 from flask_mail import Mail, Message
+from flask_talisman import Talisman
 import os
 
 app= Flask(__name__, template_folder='')
+Talisman(app)
 
 Compress(app)
 
-# app.secret_key = 'DONOTTELL'
-app.secret_key = 'SEEKRITKEE'
+app.secret_key = 'DONOTTELL'
 
 mail_settings = {
     "MAIL_SERVER": "smtp.gmail.com",
@@ -17,22 +18,8 @@ mail_settings = {
     "MAIL_USE_TLS": True,
     "MAIL_USE_SSL": False,
     "MAIL_USERNAME": 'lillianlakeswebsite@gmail.com',
-    "MAIL_PASSWORD": 'lakeswebsitePW1',
+    "MAIL_PASSWORD": os.environ.get("EMAIL_PW")
 }
-
-# app.config["DEBUG"] = False # same as app.config["MAIL_DEBUG"]
-# app.config["TESTING"] = False # same as app.config["MAIL_SUPPRESS_SEND"]
-# app.config["MAIL_SERVER"] = "smtp.gmail.com"
-# app.config["MAIL_PORT"] = 465
-# app.config["MAIL_USE_TLS"] = False
-# app.config["MAIL_USE_SSL"] = True
-# app.config["MAIL_DEBUG"] = False # added 11.3.2021
-# app.config["MAIL_USERNAME"] = 'lillian.lakes@gmail.com'
-# app.config["MAIL_PASSWORD"] = os.environ.get("EMAIL_PW")
-# app.config["MAIL_DEFAULT_SENDER"] = 'lillian.lakes@gmail.com' # added 11.3.2021
-# app.config["MAIL_MAX_EMAILS"] = 5 # added 11.3.2021
-# app.config["MAIL_SUPPRESS_SEND"] = False # added 11.3.2021
-# app.config["MAIL_ASCII_ATTACHMENTS"] = False # added 11.3.2021
 
 app.config.update(mail_settings)
 mail = Mail(app)
