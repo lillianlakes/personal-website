@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, flash
 from flask_compress import Compress
 from forms.forms import ContactForm
 from flask_mail import Mail, Message
-from flask_talisman import Talisman
+# from flask_talisman import Talisman
 import os
 
 app= Flask(__name__, template_folder='')
-Talisman(app)
+# Talisman(app)
 
 Compress(app)
 
