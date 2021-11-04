@@ -1,12 +1,10 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect
 from flask_compress import Compress
 from forms.forms import ContactForm
 from flask_mail import Mail, Message
-# from flask_talisman import Talisman
 import os
 
 app= Flask(__name__, template_folder='')
-# Talisman(app)
 
 Compress(app)
 
@@ -24,6 +22,17 @@ mail_settings = {
 app.config.update(mail_settings)
 mail = Mail(app)
 
+@app.before_request
+def before_request():
+    if app.env == "development":
+        return
+    if request.is_secure:
+        return
+
+    url = request.url.replace("http://", "https://", 1)
+    code = 301
+    return redirect(url, code=code)
+    
 @app.route('/', methods=['GET', 'POST'])
 def handle_contact_form():
     """Handle the contact form."""
