@@ -46,7 +46,7 @@ def handle_contact_form():
         else:
             """Send Email."""
             msg = Message("Website Contact Form",
-                       recipients=["lillian.lakes@gmail.com"],
+                       recipients=["lillianlakeswebsite@gmail.com"],
                        sender=(form.name.data, form.email.data))
             msg.body = f"Name: {form.name.data} \n Email: {form.email.data} \n Message: {form.message.data}"
             mail.send(msg)
