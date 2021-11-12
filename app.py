@@ -16,7 +16,8 @@ mail_settings = {
     "MAIL_USE_TLS": True,
     "MAIL_USE_SSL": False,
     "MAIL_USERNAME": 'lillianlakeswebsite@gmail.com',
-    "MAIL_PASSWORD": os.environ.get("EMAIL_PW")
+    # "MAIL_PASSWORD": os.environ.get("EMAIL_PW")
+    "MAIL_PASSWORD": "rnvkewymoxxxphfz"
 }
 
 app.config.update(mail_settings)
